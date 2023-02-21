@@ -15,11 +15,11 @@ void times_table(void)
 	{
 		for (b = 0; b <= 9; b++)
 		{
-			c = a * b;
-			e = (c > 9)
+			d = a * b;
+			if (c > 9)
 			{
 				d = c % 10;
-				e = (c - d) / 10;
+				d = (c - d) / 10;
 
 				_putchar(44);
 				_putchar(32);
