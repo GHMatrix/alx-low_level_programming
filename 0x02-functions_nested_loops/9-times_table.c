@@ -19,7 +19,7 @@ void times_table(void)
 			e = (c > 9)
 			{
 				d = c % 10;
-				e = (c - u) / 10;
+				e = (c - d) / 10;
 
 				_putchar(44);
 				_putchar(32);
