@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * print_times_table - prints times table
+ * begins with 0.
  * @n: Value of times table
  */
 void print_times_table(int n)
