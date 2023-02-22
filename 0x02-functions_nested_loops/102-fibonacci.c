@@ -5,23 +5,23 @@
  */
 int main(void)
 {
-	int a = 0;
-	long b = 1;
-	long c = 2;
+	int i = 0;
+	long j = 1;
+	long k = 2;
 
-	while (a < 50)
+	while (i < 50)
 	{
-		if (a == 0)
-			printf("%d", b);
-		else if (a == 1)
-			printf(", %d", c);
+		if (i == 0)
+			printf("%ld", j);
+		else if (i == 1)
+			printf(", %ld", k);
 		else
 		{
-			c += b;
-			b = c - b;
-			printf(", %d", c);
+			k += j;
+			j = k - j;
+			printf(", %ld", k);
 		}
-			a++
+			++i;
 		}
 		printf("\n');
 		return (0);
