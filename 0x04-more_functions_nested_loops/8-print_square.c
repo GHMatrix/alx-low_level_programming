@@ -2,7 +2,7 @@
 /**
  * print_square - Program prints a square, followed by a new line
  * @size: Number of squares for size
- * Return: 0 (Success)
+ * Return: Nothing (Success)
  */
 void print_square(int size)
 {
