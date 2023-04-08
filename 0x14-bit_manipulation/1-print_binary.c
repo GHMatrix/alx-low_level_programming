@@ -6,12 +6,21 @@
 void print_binary(unsigned long int n)
 {
 	int a;
+	int num = 0;
+	unsigned long int number_now;
 
-	for (a = (sizeof(unsigned long int) * 8) - 1; a >= 0; a--)
+	for (a = 63; a >= 0; a--)
 	{
-		if ((n >> a) & 1)
+		number_now = n >> a;
+
+		if (number_now & 1)
+		{
 			_putchar('1');
-		else
+			num++;
+		}
+		else if (num)
 			_putchar('0');
 	}
+	if (!num)
+		_putchar('0');
 }
