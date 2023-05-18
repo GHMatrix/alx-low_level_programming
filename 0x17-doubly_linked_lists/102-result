@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+/**
+ * isPalindrome - Checks if a number is a palindrome.
+ * @num: The number to check.
+ *
+ * Return: 1 if the number is a palindrome, 0 otherwise.
+ */
+int isPalindrome(int num)
+{
+	int reverse = 0;
+	int temp = num;
+
+	while (temp > 0)
+	{
+		reverse = reverse * 10 + (temp % 10);
+		temp /= 10;
+	}
+
+	return (num == reverse);
+}
+
+/**
+ * main - Entry point of the program.
+ *
+ * Return: 0 on success.
+ */
+int main(void)
+{
+	int largestPalindrome = 0;
+	int i, j;
+
+	for (i = 999; i >= 100; i--)
+	{
+		for (j = i; j >= 100; j--)
+		{
+			int product = i * j;
+
+			if (product <= largestPalindrome)
+				break;
+
+			if (isPalindrome(product) && product > largestPalindrome)
+				largestPalindrome = product;
+		}
+	}
+
+	FILE *file = fopen("102-result", "w");
+	if (file != NULL)
+	{
+		fprintf(file, "%d", largestPalindrome);
+		fclose(file);
+		printf("The largest palindrome made from the product of two 3-digit numbers is: %d\n", largestPalindrome);
+	}
+	else
+	{
+		printf("Unable to open the file.\n");
+	}
+
+	return (0);
+}
