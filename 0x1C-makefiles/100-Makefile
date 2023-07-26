@@ -20,7 +20,7 @@ all: $(NAME)
 
 # Rule for building the 'school' executable
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $(OBJ)
 
 # Rule to compile .c files into .o files
 %.o: %.c m.h
@@ -28,11 +28,11 @@ $(NAME): $(OBJ)
 
 # Rule to delete all Emacs and Vim temporary files and the executable
 clean:
-	$(RM) *~ \#*\# $(NAME)
+	@$(RM) -f *~ \#*\# $(NAME)
 
 # Rule to delete the object files
 oclean:
-	$(RM) $(OBJ)
+	@$(RM) -f $(OBJ)
 
 # Rule to delete all Emacs and Vim temporary files, the executable, and the object files
 fclean: clean oclean
