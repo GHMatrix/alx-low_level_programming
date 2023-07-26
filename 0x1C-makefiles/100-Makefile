@@ -3,6 +3,9 @@
 # Compiler to be used
 CC := gcc
 
+# Compiler flags
+CFLAGS := -Wall -Werror -Wextra -pedantic
+
 # Source files (.c files)
 SRC := main.c school.c
 
@@ -17,11 +20,11 @@ all: $(NAME)
 
 # Rule for building the 'school' executable
 $(NAME): $(OBJ)
-	$(CC) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $^
 
 # Rule to compile .c files into .o files
-%.o: %.c | m.h
-	$(CC) -c -o $@ $<
+%.o: %.c m.h
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 # Rule to delete all Emacs and Vim temporary files and the executable
 clean:
